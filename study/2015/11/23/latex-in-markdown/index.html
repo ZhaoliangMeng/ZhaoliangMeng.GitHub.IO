@@ -2,14 +2,14 @@
 <html>
 <head>
   
-  <title>Frank's Blog</title>
+  <title>Markdown中插入LaTeX数学公式的方法 - Frank's Blog</title>
   
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <!-- Post Propertites -->
-  <link rel="canonical" href="http://www.flinhong.com/">
-  <meta name="description" content="This personal blog was built with ❤️ by Frank Lin. Thanks to GitHub (GitCafe) and Jekyll for the technical supports.">
+  <link rel="canonical" href="http://www.flinhong.com/study/2015/11/23/latex-in-markdown/">
+  <meta name="description" content="Markdown自由书写的特性很好，但遇到数学公式时就要煞费苦心——每次都是先使用LaTeX书写，然后保存为图片，使用img标签进行引用，当公式很多的时候稍显复杂。本文的方法使用html的语法，在线生成LaTeX数学公式，免去将公式保存为图片的麻烦。当然，弊端也是有的，公式太多，可能会造成刷新比一般的网页慢一些。">
   <meta name="author" content="Frank Lin">
 
   <!-- Webmaster tools verification -->
@@ -162,14 +162,14 @@ $.get("http://ipinfo.io", function (response) {
       var screenWidth = jWindow.width();
       var postHeight = $('#post_content').height() + 150;
       var footerHeight = $('#footer').height();
-      if(scrollHeight > 1200 && screenWidth > 1200){
-        $('#fixed_search').css({
+      if(scrollHeight > 600 && scrollHeight < postHeight && screenWidth > 1200){
+        $('#fixtoc').css({
           'position':'fixed',
           'top':'75px',
           'z-index': '0'
         });
       }else{
-        $('#fixed_search').css({
+        $('#fixtoc').css({
           'position':'static'
         });
       }
@@ -182,6 +182,7 @@ $.get("http://ipinfo.io", function (response) {
       jWindow.trigger('scroll');
     });
     </script>
+
     
     <!-- End postion detection -->
 
@@ -475,6 +476,9 @@ $.get("http://ipinfo.io", function (response) {
 </div><!-- End Header main -->
 
 
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+<!-- MathJax -->
+
 
 <!-- Duoshuo JS -->
 <script type="text/javascript">
@@ -494,359 +498,199 @@ ds.charset = 'UTF-8';
 
       <!-- Section -->
       <section>
-        <div class="container">
-          <div class="row">
+        <div class="container"><!-- container -->
+          <div class="row"><!--  row -->
             <!-- Main content -->
             <div class="col col_9_of_12">
+              <!-- Post -->
+              <article class="post" id="post_content">
+                <!-- Media -->
+                
+                <div class="entry_media">
+                  <a href="http://i63.tinypic.com/2s64q2r.png" class="popup_link"><img src="http://i63.tinypic.com/2s64q2r.png" alt="Markdown中插入LaTeX数学公式的方法"></a>
+                </div>
+                
+                
+                
+                <!-- End Media -->
+                <!-- Full meta -->
+                <div class="full_meta clearfix">
+                  <span class="meta_format"><i class="fa fa-file-text"></i></span>
+                  <span class="meta_date">Nov 23, 2015</span>
+                  <span class="meta_author">Frank Lin</span>
+                  
+                  <span class="meta_tags"> <u>Markdown</u> <u>LaTeX</u> <u>MathJax</u> 
+                  
+                </div><!-- End Full meta -->
+                <!-- Entry content -->
+                <div class="entry_content">
+                  <!-- Entry title -->
+                  <h1 class="entry_title">Markdown中插入LaTeX数学公式的方法</h1><!-- End Entry title -->
+                  <p>Markdown刚兴起的时候没太在意，没想到自己为了搭建博客也慢慢用起来了。现在使用Markdown+Github Pages发文章，还是挺顺利的。</p>
 
-              <!-- Content slider -->
-<div class="content_slider">
-  <ul>
-    
-    
-    
-    
-    
-    <!-- Item -->
-    <li>
-      <a href="/study/2016/01/02/on-becoming-a-better-graduate-students/"><img src="http://i63.tinypic.com/2zgwvmw.png" alt="怎样当一名研究生，以及给研究生的一些建议"></a>
-      <div class="slider_caption">
-          <div class="thumb_meta">
-              <span class="category" jQuery><a href="/categories/#Study">Study</a></span>
-              <span class="comments"><span class="ds-thread-count" data-thread-key="flinhong/study/2016/01/02/on-becoming-a-better-graduate-students" data-count-type="comments"></span></span>
-          </div>
-          <div class="thumb_link">
-              <h3><a href="/study/2016/01/02/on-becoming-a-better-graduate-students/">怎样当一名研究生，以及给研究生的一些建议</a></h3>
-          </div>
-      </div>
-    </li><!-- End Item -->
-    
-    
-    
-    
-    
-    
-    <!-- Item -->
-    <li>
-      <a href="/journal/2016/01/01/happy-new-year-2016/"><img src="http://i65.tinypic.com/2rnkjsx.jpg" alt="新年快乐"></a>
-      <div class="slider_caption">
-          <div class="thumb_meta">
-              <span class="category" jQuery><a href="/categories/#Journal">Journal</a></span>
-              <span class="comments"><span class="ds-thread-count" data-thread-key="flinhong/journal/2016/01/01/happy-new-year-2016" data-count-type="comments"></span></span>
-          </div>
-          <div class="thumb_link">
-              <h3><a href="/journal/2016/01/01/happy-new-year-2016/">新年快乐</a></h3>
-          </div>
-      </div>
-    </li><!-- End Item -->
-    
-    
-    
-    
-    
-    
-    <!-- Item -->
-    <li>
-      <a href="/tips/2015/12/30/duoshuo-css/"><img src="http://i68.tinypic.com/2wnbneq.jpg" alt="多说评论框自定义CSS优化"></a>
-      <div class="slider_caption">
-          <div class="thumb_meta">
-              <span class="category" jQuery><a href="/categories/#Tips">Tips</a></span>
-              <span class="comments"><span class="ds-thread-count" data-thread-key="flinhong/tips/2015/12/30/duoshuo-css" data-count-type="comments"></span></span>
-          </div>
-          <div class="thumb_link">
-              <h3><a href="/tips/2015/12/30/duoshuo-css/">多说评论框自定义CSS优化</a></h3>
-          </div>
-      </div>
-    </li><!-- End Item -->
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <!-- Item -->
-    <li>
-      <a href="/study/2015/12/01/bool-in-c-sharp/"><img src="http://i65.tinypic.com/vhry95.jpg" alt="C#中布尔逻辑"></a>
-      <div class="slider_caption">
-          <div class="thumb_meta">
-              <span class="category" jQuery><a href="/categories/#Study">Study</a></span>
-              <span class="comments"><span class="ds-thread-count" data-thread-key="flinhong/study/2015/12/01/bool-in-c-sharp" data-count-type="comments"></span></span>
-          </div>
-          <div class="thumb_link">
-              <h3><a href="/study/2015/12/01/bool-in-c-sharp/">C#中布尔逻辑</a></h3>
-          </div>
-      </div>
-    </li><!-- End Item -->
-    
-    
-    
-    
-  </ul>
-</div><!-- End Content slider -->
+<p>最近又开始学习LaTeX，要用Markdown做笔记就遇到麻烦了，不过没关系，万能的搜索引擎分分钟搞定。</p>
 
+<p>下面介绍的方法使用html的语法，在网页中自动生成LaTeX数学公式，免去将公式保存为图片的麻烦。当然，弊端也是有的，公式太多，可能会造成刷新比一般的网页慢一些，而且现在不太懂LaTex，用起来还不顺手。</p>
 
-              <!-- Panel title -->
-<div class="panel_title">
-  <div>
-    <h4><a href="/categories/#Media">Music & Video</a></h4>
+<h3 id="id-google-chart">方法一：使用Google Chart的服务器</h3>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://chart.googleapis.com/chart?cht=tx&amp;chl= 在此插入LaTex公式&quot;</span> <span class="na">style=</span><span class="s">&quot;border:none;&quot;</span><span class="nt">&gt;</span></code></pre></div>
+
+<p>举个例子：</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://chart.googleapis.com/chart?cht=tx&amp;chl=\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}&quot;</span> <span class="na">style=</span><span class="s">&quot;border:none;&quot;</span><span class="nt">&gt;</span></code></pre></div>
+
+<p>公式显示结果为：</p>
+
+<p><img src="http://chart.googleapis.com/chart?cht=tx&amp;chl=\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" style="border:none;" /></p>
+
+<p>Google Chart服务器的响应速度还可以，但据说可能复杂一些的LaTeX公式可能无法解析。</p>
+
+<h3 id="id-forkosh">方法二：使用forkosh服务器</h3>
+
+<p>forkosh上提供了关于LaTeX公式的一份简短而很有用的帮助，使用forkosh插入公式的方法是：</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://www.forkosh.com/mathtex.cgi? 在此处插入LaTex公式&quot;</span><span class="nt">&gt;</span></code></pre></div>
+
+<p>同样一个例子：</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://www.forkosh.com/mathtex.cgi? \Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}&quot;</span><span class="nt">&gt;</span></code></pre></div>
+
+<p>显示结果为：</p>
+
+<p><img src="http://www.forkosh.com/mathtex.cgi? \Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" /></p>
+
+<p>因为网页插入公式的原理是调用“某某网站的服务器”动态生成的，所有保证公式正常显示的前提是该网址能一直存在着为我等小生做些小小的服务。</p>
+
+<h3 id="id-mathjax">方法三：使用MathJax引擎</h3>
+
+<p>大家应该看过<a href="http://stackoverflow.com/">Stackoverflow</a>上的公式吧，其生成的不是图片。这就要用到<a href="https://www.mathjax.org/">MathJax</a>引擎，在Markdown中添加MathJax引擎也很简单，先添加一段<code>javascript</code>：</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span></code></pre></div>
+
+<p>然后，再使用TeX/LaTex写公式。<code>$$公式$$</code>表示行间公式，本来TeX中使用<code>\(公式\)</code>表示行内公式，但因为Markdown中<code>\</code>是转义字符，所以在Markdown中输入行内公式使用<code>\\(公式\\)</code>，如下代码：</p>
+
+<pre><code>$$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
+\\(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\\)
+</code></pre>
+
+<p>分别显示结果（行间公式）：</p>
+
+<script type="math/tex; mode=display">x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}</script>
+
+<p>行内公式：\(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\)</p>
+
+<p>你还可以试一下，公式上还可以使用鼠标右键操作，比如说直接保存TeX命令等。</p>
+
+                </div><!-- End entry content -->
+                <div class="bottom_wrapper"><!-- bottom tags and categories -->
+                  <!-- Entry tags -->
+                  <div class="entry_tags">
+                    <span><i class="fa fa-tags"></i> Tags</span>
+                    
+                    
+                    <a href="/tags/#Markdown">Markdown</a>
+                    
+                    <a href="/tags/#LaTeX">LaTeX</a>
+                    
+                    <a href="/tags/#MathJax">MathJax</a>
+                    
+                    
+                  </div><!-- End Entry tags -->
+                  <!-- Entry categories -->
+                  <div class="entry_tags categories">
+                    <span><i class="fa fa-folder-open"></i> Category</span>
+                    
+                    <a href="/categories/#Study">Study</a>
+                    
+                  </div><!-- End Entry categories -->
+                </div><!-- end bottom tags and categories -->
+              </article><!-- End Post -->
+              <!-- Baidu Share-->
+<div class="widget">
+<div class="widget_title"><h3>Share this post</h3></div>
+<div class="tb_widget_weibo clearfix">
+  <!-- Duoshuo Share Buttons -->
+  <div class="ds-share flat" data-thread-key="flinhong/study/2015/11/23/latex-in-markdown" data-title="Markdown中插入LaTeX数学公式的方法" data-images="http://i63.tinypic.com/2s64q2r.png" data-content="Markdown自由书写的特性很好，但遇到数学公式时就要煞费苦心——每次都是先使用LaTeX书写，然后保存为图片，使用img标签进行引用，当公式很多的时候稍显复杂。本文的方法使用html的语法，在线生成LaTeX数学公式，免去将公式保存为图片的麻烦。当然，弊端也是有的，公式太多，可能会造成刷新比一般的网页慢一些。" data-url="http://www.flinhong.com/study/2015/11/23/latex-in-markdown/">
+      <div class="ds-share-inline alignleft">
+        <ul  class="ds-share-icons-16">
+
+          <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+          <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">新浪微博</a></li>
+          <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+          <li><a class="ds-twitter" href="javascript:void(0);" data-service="twitter">Twitter</a></li>
+          <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+          <li><a class="ds-douban" href="javascript:void(0);" data-service="douban">豆瓣网</a></li>
+          <li> <a class="ds-facebook" href="javascript:void(0);" data-service="facebook">Facebook</a></li>
+
+        </ul>
+        <div class="ds-share-icons-more">
+        </div>
+      </div>
+   </div>
+  <!-- End Duoshuo Share Buttons -->
+
+  <!-- Baidu share buttons -->
+  <div class="bdsharebuttonbox alignright" data-tag="share_1">
+  	<a class="bds_tsina" data-cmd="tsina"></a>
+    <a class="bds_qzone" data-cmd="qzone" href="#"></a>
+  	<a class="bds_douban" data-cmd="douban"></a>
+    <a class="bds_weixin" data-cmd="weixin"></a>
+    <a class="bds_fbook" data-cmd="fbook"></a>
+    <a class="bds_twi" data-cmd="twi"></a>
+    <a class="bds_evernotecn" data-cmd="evernotecn"></a>
+  	<a class="bds_more" data-cmd="more">更多</a>
+  	<a class="bds_count" data-cmd="count"></a>
   </div>
-</div><!-- End Panel title -->
-<!-- Layout post 1 -->
-<div class="row">
+  <script>
+  	window._bd_share_config = {
+  		common : {
+  			bdText : 'Markdown中插入LaTeX数学公式的方法',
+  			bdDesc : 'Markdown自由书写的特性很好，但遇到数学公式时就要煞费苦心——每次都是先使用LaTeX书写，然后保存为图片，使用img标签进行引用，当公式很多的时候稍显复杂。本文的方法使用html的语法，在线生成LaTeX数学公式，免去将公式保存为图片的麻烦。当然，弊端也是有的，公式太多，可能会造成刷新比一般的网页慢一些。',
+  			bdUrl : 'http://www.flinhong.com/study/2015/11/23/latex-in-markdown/',
+  			bdPic : 'http://i63.tinypic.com/2s64q2r.png'
+  		},
+  		share : [{
+  			"bdSize" : 16
+  		}]
+  	}
+  	with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+  </script>
+  <!-- End Baidu Share Buttons -->
+  <hr>
+</div>
+
+<!-- Page pagination -->
+<div class="tb_widget_weibo clearfix">
   
-  <div class="col col_6_of_12">
-      <!-- Layout post 1 -->
-      <div class="layout_post_1">
-          <div class="item_thumb">
-              
-              
-              <div class="entry_media">
-                <!-- Video -->
-                <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/144673626&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
-              </div>
-              
-              <div class="thumb_meta">
-                  <span class="category" jQuery><a href="/categories/#Media">Media</a></span>
-                  <span class="comments"><span class="ds-thread-count" data-thread-key="flinhong/media/2016/01/03/Benjamin-Francis-Leftwich-Shine-remixed-by-Kygo" data-count-type="comments"></span></span>
-              </div>
-          </div>
-          <div class="item_content">
-              <h4><a href="/media/2016/01/03/Benjamin-Francis-Leftwich-Shine-remixed-by-Kygo/">Benjamin Francis Leftwich - Shine (Kygo Remix)</a></h4>
-              <p>好听的歌不是天天有，这首*Shine*由我非常喜欢的**Kygo** Remix，他在Soundcloud有不少好听的歌曲，这是我无意间发现的第一首，一听就上瘾。 [<a href="/media/2016/01/03/Benjamin-Francis-Leftwich-Shine-remixed-by-Kygo/">Read More...</a>]</p>
-          </div>
-      </div><!-- End Layout post 1 -->
-  </div>
+    <a class="alignleft" href="/design/2015/11/03/custom-snippet-for-markdown-in-atom/"><i class="fa fa-chevron-left"></i> 上一篇：Atom中为markdown自定义snippets</a>
   
-  <div class="col col_6_of_12">
-      <!-- Layout post 1 -->
-      <div class="layout_post_1">
-          <div class="item_thumb">
-              
-              
-              <div class="entry_media">
-                <!-- Video -->
-                <iframe width="1280" height="720" src="https://www.youtube.com/embed/lY-3Qlvnl2g" frameborder="0" allowfullscreen></iframe>
-              </div>
-              
-              <div class="thumb_meta">
-                  <span class="category" jQuery><a href="/categories/#Media">Media</a></span>
-                  <span class="comments"><span class="ds-thread-count" data-thread-key="flinhong/media/2015/12/11/thank-u-se7en" data-count-type="comments"></span></span>
-              </div>
-          </div>
-          <div class="item_content">
-              <h4><a href="/media/2015/12/11/thank-u-se7en/">SE7EN - THANK U (MV)</a></h4>
-              <p>这是SE7EN服役前为感谢一直支持的粉丝们特别推出的一首单曲，还是他亲自作词作曲，整首歌满满的感谢，娓娓道来了SE7EN从出道到最后的演唱会的过程。值得回味。 [<a href="/media/2015/12/11/thank-u-se7en/">Read More...</a>]</p>
-          </div>
-      </div><!-- End Layout post 1 -->
-  </div>
   
-</div><!-- End Layout post 1 -->
-<!-- Panel title -->
-<div class="panel_title">
-  <div>
-    <h4><a href="/blog">Recent Posts</a></h4>
+    <a class="alignright" href="/app/2015/11/23/sharex/">下一篇：我最喜欢的截图软件——ShareX <i class="fa fa-chevron-right"></i></a>
+  
+</div>
+</div>
+
+              <!-- Comments -->
+<div id="comments">
+  <div class="panel_title">
+    <div>
+      <h4>Comments</h4>
+    </div>
   </div>
-</div><!-- End Panel title -->
-<!-- Layout post 2 -->
-<div class="row">
+
+  <!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="flinhong/study/2015/11/23/latex-in-markdown" data-title="Markdown中插入LaTeX数学公式的方法" data-url="http://www.flinhong.com/study/2015/11/23/latex-in-markdown/"></div>
+<!-- 多说评论框 end -->
 
 
-<div class="col col_12_of_12">
-    <!-- Layout post 1 -->
-    <div class="layout_post_2 clearfix">
-        <div class="item_thumb">
-            
-            <div class="thumb_icon">
-                <a href="/journal/2015/12/04/remind-the-writing-a-little-bowl-of-wonton/" jQuery><i class="fa fa-copy"></i></a>
-            </div>
-            <div class="thumb_hover">
-                <a href="/journal/2015/12/04/remind-the-writing-a-little-bowl-of-wonton/"><img src="http://i65.tinypic.com/2v7unwl.png" alt="Post" class="visible animated"></a>
-            </div>
-            
-            
-            <div class="thumb_meta">
-                <span class="category" jQuery><a href="/categories/#Journal">Journal</a></span>
-                <span class="comments"><span class="ds-thread-count" data-thread-key="flinhong/journal/2015/12/04/remind-the-writing-a-little-bowl-of-wonton" data-count-type="comments"></span></span>
-            </div>
-        </div>
-        <div class="item_content">
-            <h4><a href="/journal/2015/12/04/remind-the-writing-a-little-bowl-of-wonton/">自己也曾经写作过，读一读“一碗小馄饨”</a></h4>
-            <p>今天看豆瓣上一篇散文，抑或随笔，深深勾起自己写作的欲望。我不是一个好的写手，但我是一个认真的读者，总有那么一点点冲动往自己想要的地方伸展，点点滴滴地总会有些变化吧。 [<a href="/journal/2015/12/04/remind-the-writing-a-little-bowl-of-wonton/">Read More...</a>]</p>
-            <div class="item_meta clearfix">
-                <span class="meta_date">12/04/2015</span>
-                <span class="meta_author"><a href="#">Frank Lin</a></span>
-            </div>
-        </div>
-    </div><!-- End Layout post 1 -->
-</div>
+</div><!-- End Comments -->
 
-
-
-<div class="col col_12_of_12">
-    <!-- Layout post 1 -->
-    <div class="layout_post_2 clearfix">
-        <div class="item_thumb">
-            
-            <div class="thumb_icon">
-                <a href="/study/2015/12/01/bool-in-c-sharp/" jQuery><i class="fa fa-copy"></i></a>
-            </div>
-            <div class="thumb_hover">
-                <a href="/study/2015/12/01/bool-in-c-sharp/"><img src="http://i65.tinypic.com/vhry95.jpg" alt="Post" class="visible animated"></a>
-            </div>
-            
-            
-            <div class="thumb_meta">
-                <span class="category" jQuery><a href="/categories/#Study">Study</a></span>
-                <span class="comments"><span class="ds-thread-count" data-thread-key="flinhong/study/2015/12/01/bool-in-c-sharp" data-count-type="comments"></span></span>
-            </div>
-        </div>
-        <div class="item_content">
-            <h4><a href="/study/2015/12/01/bool-in-c-sharp/">C#中布尔逻辑</a></h4>
-            <p>C#中，bool类型可以有两个值：true或false。这种类型常常用于记录某些操作的结果，当然也用作存储比较结果，用以判断。 [<a href="/study/2015/12/01/bool-in-c-sharp/">Read More...</a>]</p>
-            <div class="item_meta clearfix">
-                <span class="meta_date">12/01/2015</span>
-                <span class="meta_author"><a href="#">Frank Lin</a></span>
-            </div>
-        </div>
-    </div><!-- End Layout post 1 -->
-</div>
-
-
-
-<div class="col col_12_of_12">
-    <!-- Layout post 1 -->
-    <div class="layout_post_2 clearfix">
-        <div class="item_thumb">
-            
-            <div class="thumb_icon">
-                <a href="/tips/2015/11/30/endnote-in-word-2016/" jQuery><i class="fa fa-copy"></i></a>
-            </div>
-            <div class="thumb_hover">
-                <a href="/tips/2015/11/30/endnote-in-word-2016/"><img src="http://i66.tinypic.com/5n1z4k.png" alt="Post" class="visible animated"></a>
-            </div>
-            
-            
-            <div class="thumb_meta">
-                <span class="category" jQuery><a href="/categories/#Tips">Tips</a></span>
-                <span class="comments"><span class="ds-thread-count" data-thread-key="flinhong/tips/2015/11/30/endnote-in-word-2016" data-count-type="comments"></span></span>
-            </div>
-        </div>
-        <div class="item_content">
-            <h4><a href="/tips/2015/11/30/endnote-in-word-2016/">Office (Word) 2016中手动加载Endnote X7.4</a></h4>
-            <p>电脑升级到Windows 10之后，顺便把Office也升级到2016版Office 365，可即便Endnote已更新到最新版本，Word中也没有CWYW的选项卡，这里就介绍如何使用Endnote官方的补丁手动注册Endnote的CWYW选项卡。 [<a href="/tips/2015/11/30/endnote-in-word-2016/">Read More...</a>]</p>
-            <div class="item_meta clearfix">
-                <span class="meta_date">11/30/2015</span>
-                <span class="meta_author"><a href="#">Frank Lin</a></span>
-            </div>
-        </div>
-    </div><!-- End Layout post 1 -->
-</div>
-
-
-
-<div class="col col_12_of_12">
-    <!-- Layout post 1 -->
-    <div class="layout_post_2 clearfix">
-        <div class="item_thumb">
-            
-            <div class="thumb_icon">
-                <a href="/app/2015/11/23/sharex/" jQuery><i class="fa fa-copy"></i></a>
-            </div>
-            <div class="thumb_hover">
-                <a href="/app/2015/11/23/sharex/"><img src="http://i67.tinypic.com/34exez7.png" alt="Post" class="visible animated"></a>
-            </div>
-            
-            
-            <div class="thumb_meta">
-                <span class="category" jQuery><a href="/categories/#App">App</a></span>
-                <span class="comments"><span class="ds-thread-count" data-thread-key="flinhong/app/2015/11/23/sharex" data-count-type="comments"></span></span>
-            </div>
-        </div>
-        <div class="item_content">
-            <h4><a href="/app/2015/11/23/sharex/">我最喜欢的截图软件——ShareX</a></h4>
-            <p>ShareX是一个开源免费，功能丰富的分享软件，能将文字、文件、截图等分享到各种网络服务中。它的功能多到夸张，支持分享文字，文件，截图到 30 多种网络服务，包括 imgur, Flickr, Pastebin, gist.Github, Dropbox, Google Drive, Mega, FTP 等等等等，以及自定义上传（发送 Post，get 请求之类的）。 [<a href="/app/2015/11/23/sharex/">Read More...</a>]</p>
-            <div class="item_meta clearfix">
-                <span class="meta_date">11/23/2015</span>
-                <span class="meta_author"><a href="#">Frank Lin</a></span>
-            </div>
-        </div>
-    </div><!-- End Layout post 1 -->
-</div>
-
-
-
-<div class="col col_12_of_12">
-    <!-- Layout post 1 -->
-    <div class="layout_post_2 clearfix">
-        <div class="item_thumb">
-            
-            <div class="thumb_icon">
-                <a href="/study/2015/11/23/latex-in-markdown/" jQuery><i class="fa fa-copy"></i></a>
-            </div>
-            <div class="thumb_hover">
-                <a href="/study/2015/11/23/latex-in-markdown/"><img src="http://i63.tinypic.com/2s64q2r.png" alt="Post" class="visible animated"></a>
-            </div>
-            
-            
-            <div class="thumb_meta">
-                <span class="category" jQuery><a href="/categories/#Study">Study</a></span>
-                <span class="comments"><span class="ds-thread-count" data-thread-key="flinhong/study/2015/11/23/latex-in-markdown" data-count-type="comments"></span></span>
-            </div>
-        </div>
-        <div class="item_content">
-            <h4><a href="/study/2015/11/23/latex-in-markdown/">Markdown中插入LaTeX数学公式的方法</a></h4>
-            <p>Markdown自由书写的特性很好，但遇到数学公式时就要煞费苦心——每次都是先使用LaTeX书写，然后保存为图片，使用img标签进行引用，当公式很多的时候稍显复杂。本文的方法使用html的语法，在线生成LaTeX数学公式，免去将公式保存为图片的麻烦。当然，弊端也是有的，公式太多，可能会造成刷新比一般的网页慢一些。 [<a href="/study/2015/11/23/latex-in-markdown/">Read More...</a>]</p>
-            <div class="item_meta clearfix">
-                <span class="meta_date">11/23/2015</span>
-                <span class="meta_author"><a href="#">Frank Lin</a></span>
-            </div>
-        </div>
-    </div><!-- End Layout post 1 -->
-</div>
-
-
-
-<div class="col col_12_of_12">
-    <!-- Layout post 1 -->
-    <div class="layout_post_2 clearfix">
-        <div class="item_thumb">
-            
-            <div class="thumb_icon">
-                <a href="/design/2015/11/03/custom-snippet-for-markdown-in-atom/" jQuery><i class="fa fa-copy"></i></a>
-            </div>
-            <div class="thumb_hover">
-                <a href="/design/2015/11/03/custom-snippet-for-markdown-in-atom/"><img src="http://i63.tinypic.com/mt6xbt.png" alt="Post" class="visible animated"></a>
-            </div>
-            
-            
-            <div class="thumb_meta">
-                <span class="category" jQuery><a href="/categories/#Design">Design</a></span>
-                <span class="comments"><span class="ds-thread-count" data-thread-key="flinhong/design/2015/11/03/custom-snippet-for-markdown-in-atom" data-count-type="comments"></span></span>
-            </div>
-        </div>
-        <div class="item_content">
-            <h4><a href="/design/2015/11/03/custom-snippet-for-markdown-in-atom/">Atom中为markdown自定义snippets</a></h4>
-            <p>Snippets在书写代码的时候非常有用，当然写文章的时候也可以借用。换到Atom之后，也想在markdown文件中使用自定义的snippets，主要还是为了给自己的Jekyll Blog文章添加YAML信息。今天自己尝试了一下，管用！ [<a href="/design/2015/11/03/custom-snippet-for-markdown-in-atom/">Read More...</a>]</p>
-            <div class="item_meta clearfix">
-                <span class="meta_date">11/03/2015</span>
-                <span class="meta_author"><a href="#">Frank Lin</a></span>
-            </div>
-        </div>
-    </div><!-- End Layout post 1 -->
-</div>
-
-
-</div><!-- End Layout post 2 -->
-
-            </div>
-            <!-- End Main content -->
+            </div><!-- Main content End -->
             <!-- Sidebar -->
 <div class="col col_3_of_12">
   <!-- Widget Search widget -->
+  <div id="fixed_search">
   <div class="widget">
     <div class="widget_title"><h3>Search widget</h3></div>
     <div class="tb_widget_search">
@@ -856,7 +700,10 @@ ds.charset = 'UTF-8';
       </form>
     </div>
   </div><!-- End Widget Search widget -->
-  <!-- Widget Social widget -->
+  </div>
+
+  
+    <!-- Widget Social widget -->
 <div class="widget" id="socialize">
   <div class="widget_title"><h3>Socialize</h3></div>
   <div class="tb_widget_socialize clearfix">
@@ -879,48 +726,7 @@ ds.charset = 'UTF-8';
   </div>
 </div><!-- End Widget Social widget -->
 
-  <!-- Widget Weibo-->
-<div class="widget">
-<div class="widget_title"><h3>Recent Weibo</h3></div>
-<div class="tb_widget_weibo clearfix">
-<iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=1&ptype=0&speed=0&skin=1&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1377982172&verifier=abd54ad9&dpc=1"></iframe>
-</div>
-</div><!-- End Widget Weibo -->
-
-  <!-- Recent Comments -->
-<div class="widget">
-  <div class="widget_title"><h3>Recent Comments</h3></div>
-    <!-- 多说最新评论 start -->
-    	<div class="ds-recent-comments" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
-    <!-- 多说最新评论 end -->
-</div>
-<!-- End Recent Comments -->
-
-  <!-- Flickr Banners -->
-<div class="widget">
-  <div class="widget_title"><h3><a href="https://www.flickr.com/photos/frankhlin/">Flickr</a></h3></div>
-  <!-- Fickr Feeds -->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-  <script src="/js/jflickrfeed/jflickrfeed.js"></script>
-  <script>
-    jQuery(document).ready(function($){
-      //you can now use $ as your jQuery object.
-      $('#bannerflickr1').jflickrfeed({
-    		limit: 8,
-    		qstrings: {
-    			id: '106195235@N05'
-    		},
-        useTemplate: false,
-    		itemCallback: function(item){
-    			$(this).append("<a href='" + item.image_b + "'><img src='" + item.image_m + "' alt=''/></a>");
-    		}
-    	});
-    });
-  </script>
-  <div id="bannerflickr1" class="tb_widget_banner_125 clearfix"></div>
-</div><!-- End Banners -->
-
-  <!-- Tags -->
+    <!-- Tags -->
 <div class="widget">
   <div class="widget_title"><h3>Tags</h3></div>
   <div class="tb_widget_tagcloud clearfix">
@@ -969,13 +775,22 @@ ds.charset = 'UTF-8';
 </div>
 <!-- End Tags -->
 
+    <!-- Toc -->
+<div class="widget">
+  <div id="fixtoc">
+    <div id="toc"></div>
+    <!-- Related to the end of js.html -->
+  </div>
+</div>
+<!-- End Toc -->
+
+  
+
 </div><!-- End Sidebar -->
 
-          </div>
-        </div>
-        <!-- End Container -->
-      </section>
-      <!-- End Section -->
+          </div><!-- end row -->
+        </div><!-- end container -->
+      </section><!-- Section End -->
       <!-- Footer -->
 <footer id="footer">
 <div class="container">
@@ -1087,8 +902,7 @@ ds.charset = 'UTF-8';
 </footer><!-- End Footer -->
 <a id="return-to-top"><i class="fa fa-chevron-up"></i></a>
 
-    </div>
-    <!-- End Wrapper -->
+    </div><!-- Wrapper End -->
     <!-- Scripts -->
 <script type="text/javascript" src="/js/jqueryscript.min.js"></script>
 <script type="text/javascript" src="/js/jqueryuiscript.min.js"></script>
@@ -1101,6 +915,17 @@ ds.charset = 'UTF-8';
 <script type="text/javascript" src="/js/init.js"></script>
 <!-- <script id="dsq-count-scr" src="//flinhong.disqus.com/count.js" async></script> -->
 
+
+<script type="text/javascript" src="/js/toc.js"></script>
+<script>
+$(document).ready(function() {
+  // $('#toc').toc();
+  // $('#toc').toc({ noBackToTopLinks: true });
+  $('#toc').toc({ headers: '.entry_content h1, .entry_content h2, .entry_content h3, .entry_content h4, .entry_content h5, .entry_content h6'});
+  // $('#').sticky();
+  // $("#post_side_widget").stick_in_parent();
+});
+</script>
 
 
   </body>
